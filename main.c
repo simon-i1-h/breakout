@@ -252,6 +252,12 @@ draw_world(struct game *g)
 	SDL_BlitSurface(op4, NULL, canvas, &dstrect);
 	SDL_FreeSurface(op4);
 
+	struct SDL_Surface *op5 = TTF_RenderUTF8_Blended(
+	    font_ui_data, "Q: 終了", (SDL_Color){0xff, 0xff, 0xff, 0xff});
+	dstrect = (SDL_Rect){495, 185, 0, 0};
+	SDL_BlitSurface(op5, NULL, canvas, &dstrect);
+	SDL_FreeSurface(op5);
+
 	dstrect = (SDL_Rect){g->bar_rect.x, g->bar_rect.y, 0, 0};
 	// SDL_BlitSurfaceに渡すSDL_Rectのhとwは戻り値であり、引数とし
 	// ては使わない
