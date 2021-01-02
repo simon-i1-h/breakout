@@ -125,7 +125,6 @@ clamp(int x, int min, int max)
 		return max;
 }
 
-// 汎用の当たり判定関数を流用したので、4辺のどこに当たったのかという余計な処理がある。
 void
 calc_collision(SDL_Rect ball_rect_, SDL_Rect entity_rect, int *collision_up,
     int *collision_down, int *collision_left, int *collision_right)
