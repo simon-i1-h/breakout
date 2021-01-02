@@ -1,0 +1,124 @@
+# reference: https://man.openbsd.org/style.9
+---
+AccessModifierOffset: -8
+AlignAfterOpenBracket: DontAlign
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+#AlignConsecutiveMacros  # Clang 10のドキュメントのみの存在
+AlignEscapedNewlines: DontAlign
+AlignOperands: false
+AlignTrailingComments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+#AllowAllConstructorInitializersOnNextLine  # Clang 10のドキュメントのみの存在
+#AllowAllParametersOfDeclarationOnNextLine  # Clang 10のドキュメントのみの存在
+#AllowShortBlocksOnASingleLine: Never  # Clang 10のドキュメントのみの存在
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+#AllowShortIfStatementsOnASingleLine: Never  # Clang 10のドキュメントのみの存在
+AllowShortIfStatementsOnASingleLine: false
+#AllowShortLambdasOnASingleLine  # Clang 10のドキュメントのみの存在
+AllowShortLoopsOnASingleLine: false
+#AlwaysBreakAfterDefinitionReturnType: None  # Deprecated
+AlwaysBreakAfterReturnType: AllDefinitions
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: true
+BinPackParameters: true
+BraceWrapping:
+  #AfterCaseLabel: false  # Clang 10のドキュメントのみの存在
+  AfterClass: false
+  #AfterControlStatement: Never  # Clang 10のドキュメントのみの存在
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterFunction: true
+  AfterNamespace: false
+  #AfterObjCDeclaration: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces:  false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Custom
+BreakBeforeTernaryOperators: false
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+BreakStringLiterals: true
+ColumnLimit: 80
+CommentPragmas: '^ IWYU pragma:'
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+#DeriveLineEnding: false  # Clang 10のドキュメントのみの存在
+DerivePointerAlignment: false
+DisableFormat: false
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: true
+ForEachMacros: []
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '.*'
+    Priority: 1
+    #SortPriority: 0  # Clang 10のドキュメントのみの存在
+IncludeIsMainRegex: '(Test)?$'
+#IncludeIsMainSourceRegex: ''  # Clang 10のドキュメントのみの存在
+IndentCaseLabels: false
+#IndentGotoLabels: true  # Clang 10のドキュメントのみの存在
+IndentPPDirectives: None
+IndentWidth: 8
+IndentWrappedFunctionNames: false
+KeepEmptyLinesAtTheStartOfBlocks: false
+Language: Cpp
+MacroBlockBegin: ''
+MacroBlockEnd: ''
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+#NamespaceMacros: []  # Clang 10のドキュメントのみの存在
+
+# git's rules
+PenaltyBreakAssignment: 10
+PenaltyBreakBeforeFirstCallParameter: 30
+PenaltyBreakComment: 10
+PenaltyBreakFirstLessLess: 0
+PenaltyBreakString: 10
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 100
+PenaltyReturnTypeOnItsOwnLine: 60
+
+PointerAlignment: Right
+RawStringFormats: []
+ReflowComments: true
+SortIncludes: true
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: false
+#SpaceAfterLogicalNot: false  # Clang 10のドキュメントのみの存在
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+#SpaceBeforeSquareBrackets: false  # Clang 10のドキュメントのみの存在
+#SpaceInEmptyBlock: false  # Clang 10のドキュメントのみの存在
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: false
+#SpacesInConditionalStatement: false  # Clang 10のドキュメントのみの存在
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+#Standard: c++03  # Clang 10のドキュメントのみの存在
+Standard: Cpp03
+StatementMacros: []
+TabWidth: 8
+#UseCRLF: false  # Clang 10のドキュメントのみの存在
+UseTab: ForIndentation
+...

@@ -1,0 +1,14 @@
+my breakout license:
+
+* source code
+  * Path: main.c, CMakeLists.txt, and license.sh
+  * Copyright notice: see LICENSE_MIT.txt for details.
+  * License: MIT (see LICENSE_MIT.txt for details.)
+* resources (image file)
+  * Path: *.png and *.xcf
+  * Copyright notice: (c) 2021 Itoh Shimon
+  * License: CC-BY-4.0 (see LICENSE_CCBY.txt for details.)
+* Noto fonts
+  * Path: NotoSansCJKjp-Regular.otf
+  * Copyright notice: see notofonts_COPYRIGHT_NOTICE.txt for details.
+  * License: OFL-1.1 (see notofonts_LICENSE_OFL.txt for details.)

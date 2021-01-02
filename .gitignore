@@ -1,0 +1,5 @@
+/build
+/embuild
+/license
+/.clangd
+/compile_commands.json

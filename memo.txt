@@ -1,0 +1,53 @@
+- フォント読み込みの参考 http://utsukemononi.gozaru.jp/gc/sdl/page008.html
+- 画像表示サンプル1 http://utsukemononi.gozaru.jp/gc/sdl/page003.html
+- 画像表示サンプル2 http://utsukemononi.gozaru.jp/gc/sdl/page020.html
+- SDLで画面表示を行うのは、CPUベースのSDL_Surface系?とGPUベースのSDL_Render系?があるらしい https://stackoverflow.com/questions/33402909/sdl-renderpresent-vs-sdl-updatewindowsurface
+- 画面よりでかい画像 http://utsukemononi.gozaru.jp/gc/sdl/page020.html
+- ブロック崩しはちゃんと作ろうとすると反射角度の扱いが難しい問題
+  http://motoyamablog.blogspot.com/2017/08/blockbreaker.html
+  http://yutakana.org/gamekou/2017/03/17/block4/
+  - アルカノイドみたいに、バーの位置によって反射の向きが変わるのが無難だ
+    ろうか。
+  - 水平に飛んでいくと無限に落ちてこなくなって終わるので、水平に近い角
+    度では飛ばないように補正する必要がある。
+    https://qiita.com/cayto_pr/items/156714a10fd05aa9ef9d
+- そもそも当たり判定の扱いが難しい問題。すり抜けないようにすることもで
+  きるらしい。 https://zerox4c.hatenablog.com/entry/20101017/1287303954
+
+今回はバグりまくってても構わないので、ボールの当たり判定の仕様はシンプルに:
+- ボール含め全ての当たり判定は矩形。
+- バーは入射角と反射角が等しくなるように反射させる。
+- 二つ以上の当たり判定に同時に接した場合は、入射角の逆方向に反射させる。
+- ブロックの隣りあっている辺は当たり判定が消滅する。
+
+emscriptenのライセンス:
+- portsはemsdk/upstream/emscripten/cache/portsにあって、依存ライブラリ
+  の一覧が見れる。
+- ライセンスリスト:
+  - emsdk/upstream/emscripten/LICENSE
+  - emsdk/upstream/emscripten/system/lib/libc/musl/COPYRIGHT
+  - emsdk/upstream/emscripten/cache/ports/freetype.zip
+  - emsdk/upstream/emscripten/cache/ports/libpng.zip
+  - emsdk/upstream/emscripten/cache/ports/sdl2.zip
+  - emsdk/upstream/emscripten/cache/ports/sdl2_image.zip
+  - emsdk/upstream/emscripten/cache/ports/sdl2_ttf.zip
+  - emsdk/upstream/emscripten/cache/ports/zlib.zip
+- 依存関係
+  - emscripten
+    - musl libc
+  - (ports) -- portsは面倒なのでソースコードのzipごと配る
+    - freetype
+    - libpng
+    - sdl2
+    - sdl2_image
+    - sdl2_ttf
+    - zlib
+
+TODO:
+- バーは当たる場所によって異なる反射を行う。アルカノイド方式。
+- 弾がほぼ水平に飛んでいく場合、やや上に補正する?
+- あまり頑張らなくても引っかからないようにできる気がするんだけどなあ。
+  押し戻すというか。->それってすり抜けないようにするって話しなんだけ
+  ど->逆方向への反射(この時、速度量は任意に決めてよい)と当たり判定の計
+  算を繰り返して、当たり判定がでないところに追い出す(オブジェクトがか
+  さらなくなったら、一つ前?の当たり判定を採用する)とか?
